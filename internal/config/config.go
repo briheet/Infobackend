@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/briheet/basicBackend/models"
+	"github.com/briheet/basicBackend/internal/models"
 )
 
 var envs = initConfig()
 
-func initConfig() {
+func initConfig() models.Config {
 	return models.Config{
 		Port:       getEnv("PORT", "8080"),
 		DBUser:     getEnv("DB_USER", "briheet"),
