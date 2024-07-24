@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/briheet/basicBackend/api"
+)
 
 func main() {
-	fmt.Println("Hey")
+	server := api.NewAPIServer(":8080", nil)
+	if err := server.Run(); err != nil {
+		log.Fatal(err)
+	}
 }
